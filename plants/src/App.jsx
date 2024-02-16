@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Account from "./components/Account";
+import NavBar from "./components/Navbar";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -15,6 +16,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <NavBar token={token} setToken={setToken} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register setToken={setToken} />} />
