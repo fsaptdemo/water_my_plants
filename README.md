@@ -32,7 +32,7 @@ AS a non-authenticated user, I should be able to:
 
 AS an authenticated user, I should be able to: 
 
-- [ ] See a list of all of my plants
+- [x] See a list of all of my plants
 - [ ] See details about any of my plants 
 - [ ] Create a new plant AND enter the following plant information:
     - [ ] plant species

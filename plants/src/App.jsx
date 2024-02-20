@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Account from "./components/Account";
 import NavBar from "./components/Navbar";
+import PlantList from "./components/PlantList";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" element={<Register setToken={setToken} />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/account" element={<Account token={token} />} />
+          <Route path="/plantlist" element={<PlantList token={token} />} />
         </Routes>
       </BrowserRouter>
     </div>
