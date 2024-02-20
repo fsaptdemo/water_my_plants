@@ -41,6 +41,14 @@ export const apiSlice = createApi({
         },
       }),
     }),
+    plantDetails: builder.query({
+      query: ({ token, id }) => ({
+        url: `/api/plants/${id}`,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
   }),
 });
 
@@ -49,6 +57,7 @@ export const {
   useLoginMutation,
   useAccountQuery,
   usePlantListQuery,
+  usePlantDetailsQuery,
 } = apiSlice;
 
 //useEndpointnameMutation

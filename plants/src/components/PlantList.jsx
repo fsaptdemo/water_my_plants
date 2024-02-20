@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 //api
 import { usePlantListQuery } from "../redux/api";
 
@@ -32,13 +33,13 @@ function PlantList({ token }) {
           <div key={plant.plant_id}>
             <h2>Species: {plant.species}</h2>
             <img src={plant.img_url} />
-            <p>Name: {plant.name}</p>
-            <p>Water Frequency: {plant.water_frequency}</p>
+            <Link to={`/plantdetails/${plant.plant_id}`}>See More Details</Link>
           </div>
         );
       })}
     </div>
   );
 }
+//plant.plant_id or id
 
 export default PlantList;
