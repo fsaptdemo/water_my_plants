@@ -25,10 +25,19 @@ export const apiSlice = createApi({
         body: loginUser,
       }),
     }),
+    account: builder.query({
+      query: (token) => ({
+        url: "/api/users",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = apiSlice;
+export const { useRegisterMutation, useLoginMutation, useAccountQuery } =
+  apiSlice;
 
 //useEndpointnameMutation
 //useEndpointnameQuery

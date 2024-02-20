@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 //api
 import { useLoginMutation } from "../redux/api";
 
@@ -9,6 +10,7 @@ function Login(props) {
   });
   const [errorMsg, setError] = useState(null);
   const [login] = useLoginMutation();
+  const navigate = useNavigate();
 
   const eventHandler = async (event) => {
     event.preventDefault();
@@ -20,6 +22,8 @@ function Login(props) {
     } else {
       // data.token
       props.setToken(data.token);
+      //TODO: change to plant list route later
+      navigate("/account");
     }
   };
 
