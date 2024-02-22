@@ -10,6 +10,7 @@ import Account from "./components/Account";
 import NavBar from "./components/Navbar";
 import PlantList from "./components/PlantList";
 import PlantDetails from "./components/PlantDetails";
+import AddPlant from "./components/AddPlant";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -29,6 +30,7 @@ function App() {
             path="/plantdetails/:id"
             element={<PlantDetails token={token} />}
           />
+          <Route path="/addplant" element={<AddPlant token={token} />} />
         </Routes>
       </BrowserRouter>
     </div>

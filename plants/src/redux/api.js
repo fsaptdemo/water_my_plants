@@ -9,6 +9,7 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://water-my-plants-api.onrender.com",
   }),
+  tagTypes: ["Plant"],
   // The "endpoints" represent operations and requests for this server
   endpoints: (builder) => ({
     register: builder.mutation({
@@ -40,6 +41,7 @@ export const apiSlice = createApi({
           authorization: `Bearer ${token}`,
         },
       }),
+      providesTags: ["Plant"],
     }),
     plantDetails: builder.query({
       query: ({ token, id }) => ({
@@ -48,6 +50,17 @@ export const apiSlice = createApi({
           authorization: `Bearer ${token}`,
         },
       }),
+    }),
+    addPlant: builder.mutation({
+      query: ({ token, body }) => ({
+        url: "/api/plants",
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+        body,
+      }),
+      invalidatesTags: ["Plant"],
     }),
   }),
 });
@@ -58,6 +71,7 @@ export const {
   useAccountQuery,
   usePlantListQuery,
   usePlantDetailsQuery,
+  useAddPlantMutation,
 } = apiSlice;
 
 //useEndpointnameMutation

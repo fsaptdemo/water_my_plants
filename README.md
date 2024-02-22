@@ -34,11 +34,11 @@ AS an authenticated user, I should be able to:
 
 - [x] See a list of all of my plants
 - [x] See details about any of my plants 
-- [ ] Create a new plant AND enter the following plant information:
-    - [ ] plant species
-    - [ ] water frequency for that plant
-    - [ ] plant nick-name
-    - [ ] image of the plant 
+- [x] Create a new plant AND enter the following plant information:
+    - [x] plant species
+    - [x] water frequency for that plant
+    - [x] plant nick-name
+    - [x] image of the plant 
 - [ ] Edit an existing plant 
 - [ ] Remove a plant from my list
 - [x] See my account information
