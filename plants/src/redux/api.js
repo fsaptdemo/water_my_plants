@@ -74,6 +74,16 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["Plant"],
     }),
+    deletePlant: builder.mutation({
+      query: ({ id, token }) => ({
+        url: `/api/plants/${id}`,
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      }),
+      invalidatesTags: ["Plant"],
+    }),
   }),
 });
 
@@ -85,6 +95,7 @@ export const {
   usePlantDetailsQuery,
   useAddPlantMutation,
   useEditPlantMutation,
+  useDeletePlantMutation,
 } = apiSlice;
 
 //useEndpointnameMutation

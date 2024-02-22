@@ -1,15 +1,21 @@
 import { useParams, useNavigate } from "react-router-dom";
 //api
-import { usePlantDetailsQuery } from "../redux/api";
+import { usePlantDetailsQuery, useDeletePlantMutation } from "../redux/api";
 
 function PlantDetails({ token }) {
   let { id } = useParams();
   const navigate = useNavigate();
+  const [deletePlant] = useDeletePlantMutation();
 
   const { data, error, isLoading } = usePlantDetailsQuery({ token, id });
 
   const goToEditForm = () => {
     navigate(`/editplant/${id}`);
+  };
+
+  const removePlant = async () => {
+    await deletePlant({ id, token });
+    navigate("/plantlist");
   };
 
   if (isLoading) {
@@ -42,6 +48,7 @@ function PlantDetails({ token }) {
       <p>Species: {data.plant.species}</p>
       <h4>Water Frequency: {data.plant.water_frequency}</h4>
       <button onClick={goToEditForm}>Edit Plant</button>
+      <button onClick={removePlant}>Delete Plant</button>
     </section>
   );
 }

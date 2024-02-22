@@ -40,7 +40,7 @@ AS an authenticated user, I should be able to:
     - [x] plant nick-name
     - [x] image of the plant 
 - [x] Edit an existing plant 
-- [ ] Remove a plant from my list
+- [x] Remove a plant from my list
 - [x] See my account information
 - [x] Be able to logout without refreshing the browser
 

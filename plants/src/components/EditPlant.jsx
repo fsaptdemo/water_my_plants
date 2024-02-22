@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 // api
-
 import { useEditPlantMutation, usePlantDetailsQuery } from "../redux/api";
 
 function EditPlant({ token }) {
