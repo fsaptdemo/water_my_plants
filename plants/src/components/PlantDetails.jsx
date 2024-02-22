@@ -1,11 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 //api
 import { usePlantDetailsQuery } from "../redux/api";
 
 function PlantDetails({ token }) {
   let { id } = useParams();
+  const navigate = useNavigate();
 
   const { data, error, isLoading } = usePlantDetailsQuery({ token, id });
+
+  const goToEditForm = () => {
+    navigate(`/editplant/${id}`);
+  };
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -36,6 +41,7 @@ function PlantDetails({ token }) {
       <h3>Name: {data.plant.name}</h3>
       <p>Species: {data.plant.species}</p>
       <h4>Water Frequency: {data.plant.water_frequency}</h4>
+      <button onClick={goToEditForm}>Edit Plant</button>
     </section>
   );
 }

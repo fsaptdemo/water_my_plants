@@ -11,6 +11,7 @@ import NavBar from "./components/Navbar";
 import PlantList from "./components/PlantList";
 import PlantDetails from "./components/PlantDetails";
 import AddPlant from "./components/AddPlant";
+import EditPlant from "./components/EditPlant";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -31,6 +32,7 @@ function App() {
             element={<PlantDetails token={token} />}
           />
           <Route path="/addplant" element={<AddPlant token={token} />} />
+          <Route path="/editplant/:id" element={<EditPlant token={token} />} />
         </Routes>
       </BrowserRouter>
     </div>

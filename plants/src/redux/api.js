@@ -50,11 +50,23 @@ export const apiSlice = createApi({
           authorization: `Bearer ${token}`,
         },
       }),
+      providesTags: ["Plant"],
     }),
     addPlant: builder.mutation({
       query: ({ token, body }) => ({
         url: "/api/plants",
         method: "POST",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+        body,
+      }),
+      invalidatesTags: ["Plant"],
+    }),
+    editPlant: builder.mutation({
+      query: ({ id, token, body }) => ({
+        url: `/api/plants/${id}`,
+        method: "PUT",
         headers: {
           authorization: `Bearer ${token}`,
         },
@@ -72,6 +84,7 @@ export const {
   usePlantListQuery,
   usePlantDetailsQuery,
   useAddPlantMutation,
+  useEditPlantMutation,
 } = apiSlice;
 
 //useEndpointnameMutation

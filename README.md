@@ -39,7 +39,7 @@ AS an authenticated user, I should be able to:
     - [x] water frequency for that plant
     - [x] plant nick-name
     - [x] image of the plant 
-- [ ] Edit an existing plant 
+- [x] Edit an existing plant 
 - [ ] Remove a plant from my list
 - [x] See my account information
 - [x] Be able to logout without refreshing the browser
