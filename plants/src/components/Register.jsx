@@ -1,6 +1,8 @@
 import { useState } from "react";
 //api
 import { useRegisterMutation } from "../redux/api";
+//styles
+import "./styles/Register.css";
 
 function Register(props) {
   const [userInfo, setUserInfo] = useState({
@@ -52,17 +54,20 @@ function Register(props) {
             onChange={onUserInput}
           />
         </label>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          placeholder="password"
-          name="password"
-          value={userInfo.password}
-          onChange={onUserInput}
-        />
+        <label htmlFor="password">
+          Password{" "}
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            value={userInfo.password}
+            onChange={onUserInput}
+          />
+        </label>
         <label>
           Email
           <input
+            className="snailMail"
             type="text"
             placeholder="Email"
             name="email"
@@ -70,17 +75,21 @@ function Register(props) {
             onChange={onUserInput}
           />
         </label>
-        <label htmlFor="first_name">First Name</label>
-        <input
-          name="first_name"
-          type="text"
-          placeholder="first_name"
-          value={userInfo.first_name}
-          onChange={onUserInput}
-        />
+        <label htmlFor="first_name">
+          First Name{" "}
+          <input
+            className="fName"
+            name="first_name"
+            type="text"
+            placeholder="first_name"
+            value={userInfo.first_name}
+            onChange={onUserInput}
+          />
+        </label>
         <label>
           Last Name
           <input
+            className="lName"
             type="text"
             placeholder="last_name"
             name="last_name"
@@ -88,7 +97,7 @@ function Register(props) {
             onChange={onUserInput}
           />
         </label>
-        <button>Submit</button>
+        <button className="submitBtn">Submit</button>
       </form>
     </div>
   );

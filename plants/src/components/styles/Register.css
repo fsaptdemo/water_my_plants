@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+input {
+  margin-left: 24px;
+}
+
+.snailMail {
+  margin-left: 60px;
+}
+
+.fName {
+  margin-left: 16px;
+}
+
+.lName {
+  margin-left: 21px;
+}
+
+.submitBtn {
+  background-color: #dc71b6;
+  align-self: center;
+  margin-top: 33px;
+}

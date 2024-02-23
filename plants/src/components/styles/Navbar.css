@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav > a {
+  color: lightblue;
+}
+
+.active {
+  text-decoration: underline;
+}
